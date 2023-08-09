@@ -2,10 +2,11 @@ name: Regression
 run-name: Regression test
 
 on:
-  push:
-    branches:
-      - main
-
+#  push:
+#    branches:
+#      - main
+ schedule:
+   cron: "* * * * *"
 
 jobs:
   regression-test:
