@@ -29,7 +29,7 @@ public class Driver {
                 case "chrome" -> drivers.set(new ChromeDriver());
                 case "edge" -> drivers.set(new EdgeDriver());
                 case "firefox" -> drivers.set(new FirefoxDriver());
-                case "chromeheadless" -> drivers.set(new ChromeDriver(new ChromeOptions().addArguments("--headless")));
+                case "chromeheadless" -> drivers.set(new ChromeDriver(new ChromeOptions().addArguments("--headless").addArguments("window-size=1920x1080")));
                 case "edgeheadless" -> drivers.set(new EdgeDriver(new EdgeOptions().addArguments("--headless")));
                 case "firefoxheadless" -> drivers.set(new FirefoxDriver(new FirefoxOptions().addArguments("--headless")));
                 case "safari" -> drivers.set(new SafariDriver());

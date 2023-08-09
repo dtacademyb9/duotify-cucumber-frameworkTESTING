@@ -5,7 +5,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @CucumberOptions (
-          tags = "@timestamp",
+//          tags = "@timestamp",
           features = "src/test/resources", // the path where feature files are located
           glue = "stepDefinitions", // the path where step definitions are located
           plugin = {
@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
                "html:target/cucumber-report/report.html" // generates a built in html report
           },
           publish = true //generates a cloud based report
-          ,stepNotifications = true // displays detailed step results
+//          ,stepNotifications = true // displays detailed step results
 //          ,dryRun = true // to generate step definitions quickly without running the code
 
 )
