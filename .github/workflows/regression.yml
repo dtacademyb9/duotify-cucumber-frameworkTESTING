@@ -6,7 +6,7 @@ on:
 #    branches:
 #      - main
  schedule:
-   - cron: '* * * * *'
+   - cron: '*/2 * * * *'
 
 jobs:
   regression-test:
