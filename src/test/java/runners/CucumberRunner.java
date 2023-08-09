@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions (
         //c bsdnv ds
+//         cb vbc d vds
 //          tags = "@read",
           features = "src/test/resources", // the path where feature files are located
           glue = "stepDefinitions", // the path where step definitions are located
