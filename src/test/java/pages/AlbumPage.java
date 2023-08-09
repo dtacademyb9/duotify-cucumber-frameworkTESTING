@@ -48,6 +48,7 @@ public class AlbumPage extends BasePage{
 
     public void addSongToPlaylist(String songName, String playList){
         SeleniumUtils.jsClick( Driver.getDriver().findElement(By.xpath("//span[@class='trackName'][.='"+songName+"']//parent::div//following-sibling::div//img")));
+        SeleniumUtils.waitFor(2);
         new Select(Driver.getDriver().findElement(By.tagName("select"))).selectByVisibleText(playList);
     }
 

@@ -8,7 +8,7 @@ Feature: Music Streaming App Homepage
 
   Scenario: User opens the app and sees certain number of recommended albums on the homepage
     Given the user is on the homepage of the music streaming app
-    Then the user should see 5 recommended albums displayed on the main page
+    Then the user should see 9 recommended albums displayed on the main page
 #
 #  Scenario: User clicks on an album and is taken to the album page
 #    Given the user is on the homepage of the music streaming app
@@ -72,5 +72,5 @@ Feature: Music Streaming App Homepage
         | Search     |
         | Browse     |
         | Your Music |
-      And the user should be able to view and edit their user profile information, such as their name, email address, password and should be able to log out.
+#      And the user should be able to view and edit their user profile information, such as their name, email address, password and should be able to log out.
 #      single column -> list

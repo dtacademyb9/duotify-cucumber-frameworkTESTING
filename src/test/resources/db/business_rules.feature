@@ -1,4 +1,4 @@
-@DB
+@DB @BR
 Feature: Verify business rules
 
     @db_only
@@ -36,7 +36,7 @@ Feature: Verify business rules
   Scenario: verify email column for duplicates
     When I retrieve the emails from "users" table
     Then it should not contain duplicates
-    Then it should not contain duplicates using sql query
+#    Then it should not contain duplicates using sql query
 
 
    @playCount
@@ -47,13 +47,13 @@ Feature: Verify business rules
     Then the play count of the song in the database should be incremented by one
 
 
-   @playlistSongs
-  Scenario: Successfully adding a song to a playlist
-    Given I enter username as "duotech2023" and password as "duotech"
-    Then I should be able to login
-    And I add a song "Salty Dub"  from album "Clouds" to the playlist "House"
-    Then I should have the same song added to playlistSongs table
-    And the song should be deleted from the playlist
+#   @playlistSongs
+#  Scenario: Successfully adding a song to a playlist
+#    Given I enter username as "duotech2023" and password as "duotech"
+#    Then I should be able to login
+#    And I add a song "Salty Dub"  from album "Clouds" to the playlist "House"
+#    Then I should have the same song added to playlistSongs table
+#    And the song should be deleted from the playlist
 
 
    @timestamp

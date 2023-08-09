@@ -36,7 +36,8 @@ public class SignUpStepDefs {
     @Then("the system should create a new user in the {string} table of the database")
     public void the_system_should_create_a_new_user_in_the_table_of_the_database(String tableName) {
 
-        List<List<Object>> list = DBUtils.getQueryResultAsListOfLists("select username  from "+tableName+" where username='" + username + "1'");
+        List<List<Object>> list = DBUtils.getQueryResultAsListOfLists("select username  from "+tableName+" where username='" + sharedData.getUsername() + "'");
+
         System.out.println(list);
         Assert.assertTrue(!list.isEmpty());
 

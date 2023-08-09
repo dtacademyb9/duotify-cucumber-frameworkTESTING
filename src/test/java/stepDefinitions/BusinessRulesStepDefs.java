@@ -120,7 +120,7 @@ public class BusinessRulesStepDefs {
 
         new Homepage().clickOnAlbum(album);
             new AlbumPage().clickOnPlayButton(song);
-            SeleniumUtils.waitFor(1);
+            SeleniumUtils.waitFor(2);
 
 
     }
@@ -171,6 +171,7 @@ public class BusinessRulesStepDefs {
 
         List<List<Object>> list = DBUtils.getQueryResultAsListOfLists(query);
 
+        System.out.println(list);
         Assert.assertTrue(!list.isEmpty());
 
 

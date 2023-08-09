@@ -9,6 +9,7 @@ import org.openqa.selenium.Keys;
 import pages.SignInPage;
 import utils.ConfigReader;
 import utils.Driver;
+import utils.SeleniumUtils;
 
 public class LoginStepDefinitions {
 
@@ -32,6 +33,7 @@ public class LoginStepDefinitions {
     }
     @Then("I should be able to login")
     public void i_should_be_able_to_login() {
+        SeleniumUtils.waitFor(2);
         Assert.assertEquals("http://duotify.us-east-2.elasticbeanstalk.com/browse.php?", Driver.getDriver().getCurrentUrl());
 
     }
