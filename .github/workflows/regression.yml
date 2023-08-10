@@ -57,5 +57,5 @@ jobs:
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Regression tests failed
           body: Check the failed workflow run at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          to: duotechinstructor@example.com
-          from: dtacademyb10@example.com
+          to: duotechinstructor@gmail.com
+          from: dtacademyb10@gmail.com
