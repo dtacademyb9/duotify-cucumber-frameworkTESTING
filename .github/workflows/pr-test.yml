@@ -7,7 +7,7 @@ on:
 
 
 jobs:
-  regression-test:
+  branch-test:
     runs-on: ubuntu-latest
     steps:
       - name: Clone the repository
@@ -35,11 +35,11 @@ jobs:
           sudo apt-get -y install google-chrome-stable
 
       - name: Run All Tests in Branch
-        run: mvn test -D cucumber.filter.tags=@login
+        run: mvn test
 
       - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: Smoke Test Results HTML File
+          name: Test Results HTML File
           path: target/cucumber-report/report.html

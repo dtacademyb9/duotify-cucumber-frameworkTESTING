@@ -2,9 +2,6 @@ name: Regression
 run-name: Regression test
 
 on:
-  push:
-    branches:
-      - main
   schedule:
     - cron: '0 * * * *'
 
@@ -38,11 +35,11 @@ jobs:
 
 
       - name: Run Regression Tests
-        run: mvn test -Dcucumber.filter.tags="@DB"
+        run: mvn test -Dcucumber.filter.tags="@regression"
 
       - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: Smoke Test Results HTML File
+          name: Test Results HTML File
           path: target/cucumber-report/report.html
