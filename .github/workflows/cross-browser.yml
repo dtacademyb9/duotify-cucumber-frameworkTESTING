@@ -45,9 +45,9 @@ jobs:
           edge-version: 'stable' # or specify a version number
 
       - name: Set up Firefox
-        steps:
-          - uses: browser-actions/setup-firefox@v1
-          - run: firefox --version
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: 115
 
       - name: Run Regression Tests
         run: mvn test -Dcucumber.filter.tags="@login" -Dbrowser=edge
