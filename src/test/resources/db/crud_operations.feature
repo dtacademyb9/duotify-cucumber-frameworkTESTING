@@ -1,4 +1,4 @@
-@DB
+@DB @CRUD
 Feature: Verify basic CRUD operations UI to DB flow
 
    @create
