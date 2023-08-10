@@ -49,8 +49,14 @@ jobs:
         with:
           firefox-version: 116.0.2
 
-      - name: Run Regression Tests
+      - name: Run Chrome Tests
+        run: mvn test -Dcucumber.filter.tags="@login" -Dbrowser=chromeheadless
+
+      - name: Run Edge Tests
         run: mvn test -Dcucumber.filter.tags="@login" -Dbrowser=edgeheadless
+
+      - name: Run Firefox Tests
+        run: mvn test -Dcucumber.filter.tags="@login" -Dbrowser=firefoxheadless
 
       - name: Upload Test Results
         if: always()
