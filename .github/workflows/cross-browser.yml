@@ -47,7 +47,7 @@ jobs:
       - name: Set up Firefox
         uses: browser-actions/setup-firefox@v1
         with:
-          firefox-version: 115
+          firefox-version: 116.0.2
 
       - name: Run Regression Tests
         run: mvn test -Dcucumber.filter.tags="@login" -Dbrowser=edge
