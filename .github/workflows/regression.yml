@@ -59,3 +59,12 @@ jobs:
           body: Check the failed workflow run at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           to: duotechinstructor@gmail.com
           from: dtacademyb10@gmail.com
+
+      - name: Notify Slack on Failure
+        if: failure() # Only run this step if the workflow fails
+        uses: act10ns/slack@v1
+        with:
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+          channel: '#class-resources'
+          url: ${{ secrets.SLACK_WEBHOOK_URL }}
