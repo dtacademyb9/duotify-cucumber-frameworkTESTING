@@ -28,14 +28,18 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Setup Chrome Browser
-        run: |
-          sudo apt-get install -y unzip xvfb libxi6 libgconf-2-4
-          sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add
-          echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google-chrome.list
-          sudo apt-get -y update
-          sudo apt-get -y install google-chrome-stable
+#      - name: Setup Chrome Browser
+#        run: |
+#          sudo apt-get install -y unzip xvfb libxi6 libgconf-2-4
+#          sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add
+#          echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google-chrome.list
+#          sudo apt-get -y update
+#          sudo apt-get -y install google-chrome-stable
 
+      - name: Set up Google Chrome
+        uses: browser-actions/setup-chrome@latest
+        with:
+            chrome-version: 'stable' # or specify a version number
 
       - name: Run Regression Tests
         run: mvn test -Dcucumber.filter.tags="@db_only"
