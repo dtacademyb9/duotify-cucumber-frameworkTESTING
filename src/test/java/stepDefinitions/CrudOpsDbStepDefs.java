@@ -40,13 +40,14 @@ public class CrudOpsDbStepDefs {
 //                "values('"+username+"', '"+first+"', '"+last+"', '"+email+"', '"+passMD5+"' )";
 //
 
-        String query2 = String.format("INSERT INTO users (username, firstName, lastName, email, password)\n" +
-                "values('%s', '%s', '%s', '%s', '%s' )", sharedData.getUsername(),
+        String query2 = String.format("INSERT INTO users (username, firstName, lastName, email, password) " +
+                "values('%s', '%s', '%s', '%s', '%s')", sharedData.getUsername(),
                 sharedData.getFirst(),
                 sharedData.getLast(),
                 sharedData.getRandomEmail(),
                 sharedData.getPassMD5() );
 
+        System.out.println(query2);
 
         DBUtils.executeUpdate(query2);
     }
