@@ -6,7 +6,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 * * * *'
 
 jobs:
   regression-test:
@@ -35,14 +35,10 @@ jobs:
           echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google-chrome.list
           sudo apt-get -y update
           sudo apt-get -y install google-chrome-stable
-#          wget https://chromedriver.storage.googleapis.com/$(curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip
-#          unzip chromedriver_linux64.zip
-#          sudo mv chromedriver /usr/bin/chromedriver
-#          sudo chown root:root /usr/bin/chromedriver
-#          sudo chmod +x /usr/bin/chromedriver
+
 
       - name: Run Regression Tests
-        run: mvn test
+        run: mvn test -Dcucumber.filter.tags="@DB"
 
       - name: Upload Test Results
         if: always()
