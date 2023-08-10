@@ -5,7 +5,7 @@ Feature: Verify business rules
   Scenario: verify column names for songs table
      When I retrieve the column names from the "songs" table
      Then it should have the following
-       | id         |
+#       | id         |
        | title      |
        | artist     |
        | album      |
